@@ -1,3 +1,27 @@
+function getArrayParams(...arr) {
+  if (arr.length === 0) {
+    return { min: undefined, max: undefined, avg: undefined };
+  }
+
+  let min = arr[0];
+  let max = arr[0];
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+    sum += arr[i];
+  }
+
+  const avg = Number((sum / arr.length).toFixed(2));
+
+  return { min: min, max: max, avg: avg };
+}
+
 function summElementsWorker(...arr) {
 	if (arr.length === 0) {
 		return 0;
