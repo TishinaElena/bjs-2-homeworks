@@ -6,6 +6,9 @@ function Student(name, gender, age) {
 	this.subject = undefined;
 }
 
+let student1 = new Student("Василиса", "женский", 19);
+let student2 = new Student("Артём", "мужской", 25);
+
 Student.prototype.setSubject = function(subjectName) {
 	this.subject = subjectName;
 }
@@ -36,5 +39,3 @@ Student.prototype.exclude = function(reason) {
 	this.excluded = reason;
 }
 
-let student1 = new Student("Василиса", "женский", 19);
-let student2 = new Student("Артём", "мужской", 25);
