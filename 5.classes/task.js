@@ -46,22 +46,22 @@ class Book extends PrintEditionItem {
 
 class NovelBook extends Book {
   constructor(author, name, releaseDate, pagesCount) {
-    super(name, releaseDate, pagesCount, author); // Вызов конструктора родителя
+    super(author, name, releaseDate, pagesCount); // Вызов конструктора родителя
     this.type = "novel"; // Устанавливаем тип
   }
 }
 
 class FantasticBook extends Book {
   constructor(author, name, releaseDate, pagesCount) {
-    super(name, releaseDate, pagesCount, author); // Вызов конструктора родителя
+    super(author, name, releaseDate, pagesCount); // Вызов конструктора родителя
     this.type = "fantastic"; // Устанавливаем тип
   }
 }
 
 class DetectiveBook extends Book {
   constructor(author, name, releaseDate, pagesCount) {
-    super(name, releaseDate, pagesCount, author); // Вызов конструктора родителя
-    this.type = "detectiveBook"; // Устанавливаем тип
+    super(author, name, releaseDate, pagesCount); // Вызов конструктора родителя
+    this.type = "detective"; // Устанавливаем тип
   }
 }
 
@@ -86,7 +86,7 @@ class Library{
     if (bookIndex === -1) {
       return null; 
     }
-    const givenBook = this.books.splice(bookIndex, 1); 
+    const givenBook = this.books.splice(bookIndex, 1)[0]; 
     return givenBook; 
   }
 }
